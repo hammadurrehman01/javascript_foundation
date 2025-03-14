@@ -42,11 +42,45 @@ const nums = [1, 2, 3, 4, 5, 6];
 
 // now finding max value by reduce function
 
-const result = nums.reduce((acc, curr) => {
-  if (curr > acc) {
-    acc = curr;
-  }
-  return acc;
-}, 0);
+// const result = nums.reduce((acc, curr) => {
+//   if (curr > acc) {
+//     acc = curr;
+//   }
+//   return acc;
+// }, 0);
 
-console.log(result);
+// console.log(result);
+
+
+
+
+// ******************* find the number of users belong to each age group *********************** //
+
+const users = [
+  { name: "Hammad Ur Rehman", age: 20 },
+  { name: "Hasan Ali Khan", age: 20 },
+  { name: "Saim Ayub", age: 22 },
+  { name: "Abrar Ahmed", age: 26 },
+  { name: "Qayyum Jatoi", age: 25 },
+  { name: "Saad Ur Rehman", age: 20 },
+  { name: "Hasan Bilal", age: 22 },
+  { name: "Ahmed Khan", age: 23 },
+  { name: "Ali Ahmed", age: 21 },
+  { name: "Balaaj Ahmed", age: 17 },
+  { name: "Umer Khan", age: 22 },
+  { name: "Maaz Ahmed", age: 22 },
+  { name: "Hassan Ali Khan", age: 16 },
+]
+
+const output = users.reduce((acc, curr) => {
+  if (acc[curr.age]) {
+    acc[curr.age] = acc[curr.age] + 1
+  } else {
+    acc[curr.age] = 1
+  }
+
+  return acc
+
+}, {})
+
+console.log(output)
