@@ -97,3 +97,36 @@ const sentence = "Hello world JavaScript";
 
 const words = sentence.split(" "); // Split by space
 console.log(words); 
+
+
+
+// ******************* find the number of users belong to each age group *********************** //
+
+const users = [
+  { name: "Hammad Ur Rehman", age: 20 },
+  { name: "Hasan Ali Khan", age: 20 },
+  { name: "Saim Ayub", age: 22 },
+  { name: "Abrar Ahmed", age: 26 },
+  { name: "Qayyum Jatoi", age: 25 },
+  { name: "Saad Ur Rehman", age: 20 },
+  { name: "Hasan Bilal", age: 22 },
+  { name: "Ahmed Khan", age: 23 },
+  { name: "Ali Ahmed", age: 21 },
+  { name: "Balaaj Ahmed", age: 17 },
+  { name: "Umer Khan", age: 22 },
+  { name: "Maaz Ahmed", age: 22 },
+  { name: "Hassan Ali Khan", age: 16 },
+]
+
+const output = users.reduce((acc, curr) => {
+  if (acc[curr.age]) {
+    acc[curr.age] = acc[curr.age] + 1
+  } else {
+    acc[curr.age] = 1
+  }
+
+  return acc
+
+}, {})
+
+console.log(output)
